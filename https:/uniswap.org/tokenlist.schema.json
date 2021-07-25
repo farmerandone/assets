@@ -1,0 +1,448 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://uniswap.org/tokenlist.schema.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "name": "My Token List",
+            "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+            "keywords": [
+                "agriculture",
+                "circulation",
+                "information exchange"
+            ],
+            "tags": {
+                "agriculture": {
+                    "name": "agriculture",
+                    "description": "Tokens to pay for agri-industrial distribution transactions"
+                },
+                "FarmerAndOne": {
+                    "name": "Farmer And One",
+                    "description": "Tokens for payment and information sharing in agricultural distribution transactions"
+                }
+            },
+            "timestamp": "2021-07-07T00:00:00+00:00",
+            "tokens": [
+                {
+                    "chainId": 1,
+                    "address": "0xb8305439e5de26b4f913a5d9f3cca433f6700047",
+                    "symbol": "FAO",
+                    "name": "Farmer And One Token",
+                    "decimals": 18,
+                    "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+                    "tags": [
+                        "agriculture"
+                    ]
+                },
+                {
+                    "chainId": 1,
+                    "address": "0xb8305439e5de26b4f913a5d9f3cca433f6700047",
+                    "symbol": "FAO",
+                    "name": "Farmer And One Token",
+                    "decimals": 18,
+                    "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+                    "tags": [
+                        "FarmerAndOne"
+                    ]
+                }
+            ],
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            }
+        }
+    ],
+    "required": [
+        "name",
+        "logoURI",
+        "keywords",
+        "tags",
+        "timestamp",
+        "tokens",
+        "version"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "My Token List"
+            ]
+        },
+        "logoURI": {
+            "$id": "#/properties/logoURI",
+            "type": "string",
+            "title": "The logoURI schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true"
+            ]
+        },
+        "keywords": {
+            "$id": "#/properties/keywords",
+            "type": "array",
+            "title": "The keywords schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "agriculture",
+                    "circulation"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/keywords/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/keywords/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "agriculture",
+                            "circulation"
+                        ]
+                    }
+                ]
+            }
+        },
+        "tags": {
+            "$id": "#/properties/tags",
+            "type": "object",
+            "title": "The tags schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "agriculture": {
+                        "name": "agriculture",
+                        "description": "Tokens to pay for agri-industrial distribution transactions"
+                    },
+                    "FarmerAndOne": {
+                        "name": "Farmer And One",
+                        "description": "Tokens for payment and information sharing in agricultural distribution transactions"
+                    }
+                }
+            ],
+            "required": [
+                "agriculture",
+                "FarmerAndOne"
+            ],
+            "properties": {
+                "agriculture": {
+                    "$id": "#/properties/tags/properties/agriculture",
+                    "type": "object",
+                    "title": "The agriculture schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "name": "agriculture",
+                            "description": "Tokens to pay for agri-industrial distribution transactions"
+                        }
+                    ],
+                    "required": [
+                        "name",
+                        "description"
+                    ],
+                    "properties": {
+                        "name": {
+                            "$id": "#/properties/tags/properties/agriculture/properties/name",
+                            "type": "string",
+                            "title": "The name schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "agriculture"
+                            ]
+                        },
+                        "description": {
+                            "$id": "#/properties/tags/properties/agriculture/properties/description",
+                            "type": "string",
+                            "title": "The description schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "Tokens to pay for agri-industrial distribution transactions"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "FarmerAndOne": {
+                    "$id": "#/properties/tags/properties/FarmerAndOne",
+                    "type": "object",
+                    "title": "The FarmerAndOne schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "examples": [
+                        {
+                            "name": "Farmer And One",
+                            "description": "Tokens for payment and information sharing in agricultural distribution transactions"
+                        }
+                    ],
+                    "required": [
+                        "name",
+                        "description"
+                    ],
+                    "properties": {
+                        "name": {
+                            "$id": "#/properties/tags/properties/FarmerAndOne/properties/name",
+                            "type": "string",
+                            "title": "The name schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "Farmer And One"
+                            ]
+                        },
+                        "description": {
+                            "$id": "#/properties/tags/properties/FarmerAndOne/properties/description",
+                            "type": "string",
+                            "title": "The description schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "Tokens for payment and information sharing in agricultural distribution transactions"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        },
+        "timestamp": {
+            "$id": "#/properties/timestamp",
+            "type": "string",
+            "title": "The timestamp schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-07-07T00:00:00+00:00"
+            ]
+        },
+        "tokens": {
+            "$id": "#/properties/tokens",
+            "type": "array",
+            "title": "The tokens schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "chainId": 1,
+                        "address": "0xb8305439e5de26b4f913a5d9f3cca433f6700047",
+                        "symbol": "FAO",
+                        "name": "Farmer And One Token",
+                        "decimals": 18,
+                        "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+                        "tags": [
+                            "agriculture"
+                        ]
+                    },
+                    {
+                        "chainId": 1,
+                        "address": "0xb8305439e5de26b4f913a5d9f3cca433f6700047",
+                        "symbol": "FAO",
+                        "name": "Farmer And One Token",
+                        "decimals": 18,
+                        "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+                        "tags": [
+                            "FarmerAndOne"
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/tokens/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/tokens/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "chainId": 1,
+                                "address": "0xb8305439e5de26b4f913a5d9f3cca433f6700047",
+                                "symbol": "FAO",
+                                "name": "Farmer And One Token",
+                                "decimals": 18,
+                                "logoURI": "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true",
+                                "tags": [
+                                    "agriculture"
+                                ]
+                            }
+                        ],
+                        "required": [
+                            "chainId",
+                            "address",
+                            "symbol",
+                            "name",
+                            "decimals",
+                            "logoURI",
+                            "tags"
+                        ],
+                        "properties": {
+                            "chainId": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/chainId",
+                                "type": "integer",
+                                "title": "The chainId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "address": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/address",
+                                "type": "string",
+                                "title": "The address schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "0xb8305439e5de26b4f913a5d9f3cca433f6700047"
+                                ]
+                            },
+                            "symbol": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/symbol",
+                                "type": "string",
+                                "title": "The symbol schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "FAO"
+                                ]
+                            },
+                            "name": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Farmer And One Token"
+                                ]
+                            },
+                            "decimals": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/decimals",
+                                "type": "integer",
+                                "title": "The decimals schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    18
+                                ]
+                            },
+                            "logoURI": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/logoURI",
+                                "type": "string",
+                                "title": "The logoURI schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "https://github.com/farmerandone/assets/blob/2a67faa0312ce3ad2242768849c69d821cb3776e/365.png?raw=true"
+                                ]
+                            },
+                            "tags": {
+                                "$id": "#/properties/tokens/items/anyOf/0/properties/tags",
+                                "type": "array",
+                                "title": "The tags schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        "agriculture"
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/tokens/items/anyOf/0/properties/tags/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/tokens/items/anyOf/0/properties/tags/items/anyOf/0",
+                                            "type": "string",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "agriculture"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "version": {
+            "$id": "#/properties/version",
+            "type": "object",
+            "title": "The version schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "major": 1,
+                    "minor": 0,
+                    "patch": 0
+                }
+            ],
+            "required": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "properties": {
+                "major": {
+                    "$id": "#/properties/version/properties/major",
+                    "type": "integer",
+                    "title": "The major schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "minor": {
+                    "$id": "#/properties/version/properties/minor",
+                    "type": "integer",
+                    "title": "The minor schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "patch": {
+                    "$id": "#/properties/version/properties/patch",
+                    "type": "integer",
+                    "title": "The patch schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}
